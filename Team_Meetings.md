@@ -1,1 +1,27 @@
+##Team Meeting #1##
 
+Group made introductions and everyone presented their idea. Each team member recieved two votes to use on any project they liked and we decided to move forward with the online study group plan suggested by Eric.
+
+We discussed what we thought we would need to implament to make the app:
+  -SQL tables for user name password
+  - SQL tables for class infor
+  - working calendar with interaction
+  - Front end web design
+
+We also worked on the milestone 1, answering all the questions. It is stored as a branch under milestones. 
+We decided on things we needed to complete before our next meeting. 
+
+  - Setting up and deploying a task tracking tool
+  - Getting everyone on slack
+  - defining a data model
+  - setting up a Git repository
+  - making a wireframe of the website
+  - research google API's
+  
+##Team Meeting 2##
+
+Further discussed requirements, talked about how we want the site to look (month vs weekly calendar, color scheme etc) and decided as a group that the best way to proceed would be with a google calendar API. 
+
+  - wire frames and data model are completed. Waiting on group approval. 
+  - Need research google API's
+  - reviewed trello, git and slack availability and discussed permanent meeting times that everyone could make.
