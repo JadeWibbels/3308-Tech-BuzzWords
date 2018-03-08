@@ -1,0 +1,9 @@
+To run this example html file, open a terminal window in the directory the html is saved in and:
+
+1. serve http on port 8000 using the folowing commands:
+    Python 3: python -m http.server 8000
+    Python 2: python -m SimpleHTTPServer 8000
+    
+2. Open a web browser and navigate to: http://localhost:8000/quickstart.html
+
+3. A button saying authorize should pop up. Click it and sign into google. Then all of your upcoming events will display below the button. 
