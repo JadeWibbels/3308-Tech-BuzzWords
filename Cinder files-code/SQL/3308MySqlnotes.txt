@@ -1,0 +1,65 @@
+--MySql stuff
+--create database
+create database 3308Grp1;
+use 3308Grp1;
+
+--create tables
+create table if not exists Students(
+userId varchar(40),
+password varchar(10),
+class1 int(4) default 0000,
+class2 int(4) default 0000,
+class3 int(4) default 0000,
+class4 int(4) default 0000,
+class5 int(5) default 0000,
+primary key (userId)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7;
+
+create table if not exists Classes(
+classId int(4),
+info varchar(200),
+primary key (classId)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7;
+
+-- insert classes into classes table
+insert into classes(classID, info) values
+(1200, 'Art of Computational Thinking LEC Muzny Grace Ellen'),
+(1300, 'Starting Computing LEC Fleming Ioana Nicolaes'),
+(1320, 'Engineering Applications LEC Zagrodzki Maciej'),
+(2270, 'Data Struct LEC Knox David Allen'),
+(2400, 'Computer Systems Miller Frank'),
+(2820, 'Linear Algebra with CS Apps LEC Rahimian Abtin'),
+(2824, 'Discrete Structures LEC Ketelsen Christian Willy'),
+(3002, 'HCC Foundations UCDD LEC Yeh Pei Hsiu'),
+(3010, 'Programming Project Workshop LEC Grace Ellen'),
+(3022, 'Intro to Data Science LEC Larremore Daniel'),
+(3104, 'Algorithms 4 LEC ClausetAaron'),
+(3155, 'Princip of Prog Langs LEC HALE'),
+(3202, 'Intro Artificial Intell 3 LEC'),
+(3287, 'Data Systems LEC Paradise Alan'),
+(3308, 'Software Dev Methods and Tools LEC Paradise Alan'),
+(3656, 'Numerical Comp LEC Kallen Brown Jedediah'),
+(3753, 'Operating Systems LEC'),
+(4239, 'Advanced Computer Graphics LEC Schreuder Willem Adria'),
+(4250, 'Computer Science: The Canon Eisenberg Michael'),
+(4302, 'Advanced Robotics LEC Heckman Christoffer'), 
+(4314, 'Algorithms: Molecularbio LEC Knox David Allen'),
+(4318, 'Software Eng Project Parker Richard John'),
+(4358, 'Entrepreneurial Projects II Han Richard Yehwhei'),
+(4446, 'Chaotic Dynamics Bradley Elizabeth'),
+(4448, 'Object Oriented Anlysis Design LEC Boese Elizabeth Sugar'),
+(4502, 'Data Mining Boese Elizabeth Sugar'),
+(4593, 'Computer Organization LEC'),
+(4802, 'Data Science Team 1 SEM Frongillo Rafael'), 
+(4809, 'Computer Animation 3 King Roger'),
+(4830, 'Spec Tpcs in Computer Science LEC Kane Shaun Kevin');
+
+--Inserts
+insert into Students(userId, password) values
+('erin.wibbels@colorado.edu', '3308Rocks');
+
+
+--look for existing:
+if exists (select from Students where userId = passedId and pass = password)
+
+	
