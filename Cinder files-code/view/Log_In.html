@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Log_In_Page</title>		<!--Log In Title-->
+	<link rel="stylesheet" type="text/css" href="Log_In.css">		<!--Link to CSS file-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>		<!--Link to Roboto Font -->
+</head>
+
+<body>
+	<div class="Top_Nav_Bar" id="Top_Nav_Bar">		<!--Top Nav Bar Class-->
+
+
+
+		<a href="Front_Page.html"><img class="Logo_Button" src="Logo.png"></a>		<!--Home Button-->
+
+		<a href="Log_In.html"><p class="Log_In_Button" id="Logo_Button">Log In</p></a>		<!--Log In Button-->
+
+		<a href="Front_Page.html"><p class="Home_Button" id="Home_Button">Home</p></a>		<!--Home Button-->
+
+		<a href="About_Us.html"><p class="About_Us_Button" id="About_Us_Button">About Us</p></a>		<!--About Us Button-->
+
+	</div>
+
+	<div class="Background" id="Background">
+		<img src="LogInBackground.jpg" class="Background" id="Background">
+	</div>
+
+	<div class="Log_In_Window" id="Log_In_Window">		
+<!--Log In Window-->
+
+		<div class="Top_Bar" id="Top_Bar">
+			<h1 class="Log_In_Header" id="Log_In_Header">Log In</h1>
+		</div>
+
+		<div class="Log_In_Info" id="Log_In_Info">
+		
+		<form action="/login" method="post">
+				<h2 id="Info">Enter E-mail Address</h2>
+    			    	<input type="text" name="userId" placeholder="example@colorado.edu">
+				<h2 id="Info">Enter Password</h2>
+				<input type="text" name= "password" placeholder="Password">
+
+    <input type="submit" class="submit" value="Log In">
+</form>
+			
+			<a href="New_User.html"><p id = "Create_Account" method="post" action="/add" >Create Account</p></a>
+<!-- create new user window -->
+
+
+
+
+			<a id="ForgotPass" href=""><p id="Forgot_Password">Forgot Password</p></a>
+			
+		
+		</div>
+	
+
+	</div>
+
+
+<a href="" ><button id="LogIn" type="submit" class="submit" method ="post" action ="/login">Log In</button></a>
+
+	
+<script>
+module.exports = app;
+</script>
+
+</body>
+
+</html>

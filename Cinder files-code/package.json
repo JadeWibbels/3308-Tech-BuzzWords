@@ -1,0 +1,37 @@
+{
+  "name": "cinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cinderapp.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.15.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-myconnection": "^1.0.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.0.3",
+    "install": "^0.11.0",
+    "jade": "^1.11.0",
+    "knex": "^0.14.4",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.12",
+    "morgan": "^1.9.0",
+    "mustache": "^2.3.0",
+    "mysql": "^2.15.0",
+    "npm": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jade Wibbels",
+  "license": "ISC"
+}

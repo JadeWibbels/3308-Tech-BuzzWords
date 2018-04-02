@@ -1,0 +1,156 @@
+.Top_Nav_Bar
+{
+	width: 100%; height: 50px;
+	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-bottom: 500px;
+	border-bottom-color: rgb(190,170,104); 
+	border: 3px solid rgb(190,170,104);
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.Left_Side_Bar
+{
+	width: 250px;
+	height: 100%;
+	background-color: rgb(190,170,104);
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 70px;
+	bottom: 0;
+}
+
+.Class_Options
+{
+	width: 100%;
+	height: 100%;
+	top: 193px;
+	left: 250px;
+	float: left;
+	background-color: lightgrey;
+	position: fixed;
+}
+
+.Logo_Button
+{
+	float: left;
+	padding-left: 25px;
+	display: inline;
+	height: 50px;
+	width: 75px;
+}
+
+.Log_In_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 20px;
+}
+
+.Home_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 160px;
+}
+
+.About_Us_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 80px;
+}
+
+.Headline
+{
+	float: left;
+	width: 83%;
+	height: 150px;
+	position: fixed;
+	top: 73px;
+	left: 250px;
+	text-align: center;
+	font-family: "Roboto";
+	color: rgb(190,170,104);
+	text
+}
+
+.HeadLineBackground
+{
+	float: left;
+	width: 83%;
+	height: 150px;
+	position: absolute;
+	left: 210px;
+	top: 57px;
+	
+}
+
+.HeadLineBackgroundImage
+{
+	width: 100%;
+	height: 175%;
+}
+
+.Options
+{
+	width: 40%;
+	height: 80px;
+	float: left;
+	left: 10px;
+	right: 10px;
+	top: 10%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	shape-margin: 10px;
+	position: static;
+	background-color: black;
+	border: 3px solid rgb(190,170,104);
+	border-radius: 10px;
+}
+
+#Class_Name
+{
+	text-align: center;
+	font-family: "Roboto";
+	color: rgb(190,170,104);
+}
+
+a:link
+{
+	text-decoration: none;
+}
+
+a:visited
+{
+	text-decoration: none;
+}
+
+a:hover
+{
+	background-color: white;
+}
