@@ -1,5 +1,14 @@
 <!DOCTYPE HTML>
 
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="myResponsiveCalendar.css"/>
+  <!-- Latest compiled and minified CSS -->
+
+
+  <title>An Updating Calendar</title>
+  <!--Author: Dylan Fox-->
+</head>
 <script type="text/JavaScript">
 
 const months = ["January", "February", "March", "April", "May", "June", "July",
@@ -28,10 +37,10 @@ const fillTable = function(todaysInfo) {
 
    while (!(insertedEnoughDays)) {
      //insert row to table
-     currentRow = calendarBody.insertRow(calendarBody.rows.length);
+     currentRow = calendarBody.insertRow(-1);
      //create days of the week to fill above row
      for (weekCounter = 0; weekCounter < 7; weekCounter++) {
-       currentCell = currentRow.insertCell(currentRow.cells.length);
+       currentCell = currentRow.insertCell(-1);
 
        if (calendarBody.rows.length === 1 &&
        weekCounter < todaysInfo.firstDayMonth) {
@@ -49,29 +58,22 @@ const fillTable = function(todaysInfo) {
        } else {
          currentCell.innerHTML = "";
        }
-       //console.log(todaysInfo.numDaysInMonth);
-       //console.log(daysInserted);
-
      }
    }
 }
 </script>
-<head>
-  <title>An Updating Calendar</title>
-  <!--Author: Dylan Fox-->
-</head>
+
 <body onload= "fillTable(new DateInfo());">
-  <TABLE ID="calendarTable" BORDER=1 ALIGN="center">
-  <TR>
-      <TH ID="tableHeader" COLSPAN=7></TH>
-  </TR>
-  <TR><TH>Sun</TH><TH>Mon</TH><TH>Tue</TH><TH>Wed</TH>
-  <TH>Thu</TH><TH>Fri</TH><TH>Sat</TH></TR>
-  <TBODY ID="tableBody"></TBODY>
-  <TR>
-      <TD COLSPAN=7>
-      </TD>
-  </TR>
-  </TABLE>
+  <table id="calendarTable">
+    <thead>
+      <tr>
+          <th id="tableHeader" colspan=7></th>
+      </tr>
+      <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+      <th>Thu</th><th>Fri</th><th>Sat</th></tr>
+    </thead>
+  <tbody id="tableBody"></tbody>
+</table>
 
 </body>
+</html>

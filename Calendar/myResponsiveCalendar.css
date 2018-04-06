@@ -1,0 +1,18 @@
+table {
+  border-collapse: collapse;
+  width: 75%;
+  margin-right: auto;
+  margin-left:auto;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  height: 50px;
+  text-align:center;
+}
+
+td{
+  vertical-align: top;
+  text-align: left;
+}
