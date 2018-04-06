@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+
+<script type="text/JavaScript">
+
+const months = ["January", "February", "March", "April", "May", "June", "July",
+  "August", "September", "October", "November", "December"];
+
+const DateInfo = function() {
+  let today = new Date();
+  this.month = months[today.getMonth()];
+  this.year = today.getFullYear();
+  this.dayOfWeek = today.getDay();
+  this.dayOfMonth = today.getDate();
+  this.numDaysInMonth = new Date(today.getFullYear(), (today.getMonth() + 1), 0).getDate();
+  this.firstDayMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+}
+
+const fillTable = function(todaysInfo) {
+  const calendarHeader = document.getElementById("tableHeader");
+  const calendarBody = document.getElementById("tableBody");
+  console.log(todaysInfo.numDaysInMonth);
+  let currentRow, currentColumn, currentCell, weekCounter;
+  let daysInserted = 0;
+  let insertedEnoughDays = false;
+  //Sets Month Header
+  calendarHeader.innerHTML = todaysInfo.month + " " +
+  todaysInfo.year;
+
+   while (!(insertedEnoughDays)) {
+     //insert row to table
+     currentRow = calendarBody.insertRow(calendarBody.rows.length);
+     //create days of the week to fill above row
+     for (weekCounter = 0; weekCounter < 7; weekCounter++) {
+       currentCell = currentRow.insertCell(currentRow.cells.length);
+
+       if (calendarBody.rows.length === 1 &&
+       weekCounter < todaysInfo.firstDayMonth) {
+         currentCell.innerHTML = "";
+         continue;
+       }
+
+       daysInserted ++;
+       if (daysInserted >= todaysInfo.numDaysInMonth) {
+         insertedEnoughDays = true;
+       }
+
+       if (daysInserted <= todaysInfo.numDaysInMonth) {
+         currentCell.innerHTML = daysInserted;
+       } else {
+         currentCell.innerHTML = "";
+       }
+       //console.log(todaysInfo.numDaysInMonth);
+       //console.log(daysInserted);
+
+     }
+   }
+}
+</script>
+<head>
+  <title>An Updating Calendar</title>
+  <!--Author: Dylan Fox-->
+</head>
+<body onload= "fillTable(new DateInfo());">
+  <TABLE ID="calendarTable" BORDER=1 ALIGN="center">
+  <TR>
+      <TH ID="tableHeader" COLSPAN=7></TH>
+  </TR>
+  <TR><TH>Sun</TH><TH>Mon</TH><TH>Tue</TH><TH>Wed</TH>
+  <TH>Thu</TH><TH>Fri</TH><TH>Sat</TH></TR>
+  <TBODY ID="tableBody"></TBODY>
+  <TR>
+      <TD COLSPAN=7>
+      </TD>
+  </TR>
+  </TABLE>
+
+</body>
