@@ -1,18 +1,28 @@
 table {
-  border-collapse: collapse;
-  width: 75%;
-  margin-right: auto;
-  margin-left:auto;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
 }
 
 td, th {
   border: 1px solid #999;
   padding: 0.5rem;
   height: 50px;
-  text-align:center;
 }
 
-td{
+.th {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.td {
   vertical-align: top;
   text-align: left;
+}
+
+.hoverOver:hover, td{
+  background-color: "black";
+  color: "white";
 }

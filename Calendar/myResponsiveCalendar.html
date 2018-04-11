@@ -2,19 +2,28 @@
 
 <html lang="en">
 <head>
+
   <link rel="stylesheet" type="text/css" href="myResponsiveCalendar.css"/>
   <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <title>An Updating Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <!--Author: Dylan Fox-->
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script type="text/JavaScript">
 
 const months = ["January", "February", "March", "April", "May", "June", "July",
   "August", "September", "October", "November", "December"];
 
-const DateInfo = function() {
+const DateInfo = function () {
   let today = new Date();
   this.month = months[today.getMonth()];
   this.year = today.getFullYear();
@@ -24,21 +33,46 @@ const DateInfo = function() {
   this.firstDayMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
 }
 
-const fillTable = function(todaysInfo) {
-  const calendarHeader = document.getElementById("tableHeader");
+const fillHeaders = function (todaysInfo) {
+  const daysOfWeek = ["Sunday", "Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const calendarMonthHeader = document.getElementById("tableHeader");
+  const calendarWeekHeader = document.getElementById("dayOfWeekHeader")
+  //sets Month Header
+  calendarMonthHeader.innerHTML = todaysInfo.month + " " +
+  todaysInfo.year;
+  calendarMonthHeader.classList.add("text-center");
+
+  daysOfWeek.forEach(function (day) {
+    currentDayOfWeek = calendarWeekHeader.insertCell(-1);
+    currentDayOfWeek.innerHTML = day;
+    currentDayOfWeek.classList.add("text-center");
+
+  });
+}
+
+const fillTable = function (todaysInfo) {
   const calendarBody = document.getElementById("tableBody");
-  console.log(todaysInfo.numDaysInMonth);
   let currentRow, currentColumn, currentCell, weekCounter;
   let daysInserted = 0;
   let insertedEnoughDays = false;
-  //Sets Month Header
-  calendarHeader.innerHTML = todaysInfo.month + " " +
-  todaysInfo.year;
+
+  //higher order function to create onClick actions for individual cells
+  const createOnClickFunction = function (currentCell){
+    return function () {
+      if(currentCell.style.backgroundColor ===  "black") {
+        currentCell.style.backgroundColor = "white";
+        currentCell.style.color = "black";
+      } else {
+       currentCell.style.backgroundColor = "black";
+       currentCell.style.color = "white";
+     }
+   }
+ }
 
    while (!(insertedEnoughDays)) {
      //insert row to table
      currentRow = calendarBody.insertRow(-1);
-     //create days of the week to fill above row
+     //create days of the week to fill  row inserted above
      for (weekCounter = 0; weekCounter < 7; weekCounter++) {
        currentCell = currentRow.insertCell(-1);
 
@@ -55,6 +89,12 @@ const fillTable = function(todaysInfo) {
 
        if (daysInserted <= todaysInfo.numDaysInMonth) {
          currentCell.innerHTML = daysInserted;
+         paragraph = document.createElement('p')
+         paragraph.innerHTML = "Test"
+         paragraph.classList.add("text-center")
+         currentCell.appendChild(paragraph)
+         currentCell.onclick = createOnClickFunction(currentCell);
+         currentCell.classList.add("hoverOver");
        } else {
          currentCell.innerHTML = "";
        }
@@ -63,17 +103,25 @@ const fillTable = function(todaysInfo) {
 }
 </script>
 
-<body onload= "fillTable(new DateInfo());">
-  <table id="calendarTable">
-    <thead>
-      <tr>
-          <th id="tableHeader" colspan=7></th>
-      </tr>
-      <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
-      <th>Thu</th><th>Fri</th><th>Sat</th></tr>
-    </thead>
-  <tbody id="tableBody"></tbody>
-</table>
+<body>
+  <div class="table-responseive">
+    <table class="table-hover-cells" id="calendarTable">
+      <thead>
+        <tr>
+            <th id="tableHeader" colspan=7></th>
+        </tr>
+        <tr id="dayOfWeekHeader">
+        </tr>
+      </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
 
 </body>
+
+<script type="text/javascript">
+  let dateInfo = new DateInfo;
+  fillHeaders(dateInfo)
+  fillTable(dateInfo);
+</script>
 </html>
