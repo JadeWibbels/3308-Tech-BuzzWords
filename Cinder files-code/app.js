@@ -1,56 +1,15 @@
 /* Loading modules and setting JS variables*/
 
 var express = require("express");
-var exphbs = require("express-handlebars");
-var logger = require("morgan");
-var cookieParser = require("cookie-parser");
-var methodOverride = require("method-override");
-var session = require("express-session");
-var passport = require("passport");
-var LocalStrategy = require("passport-local");
-var app     = express();
+let app = express();
 var path    = require("path");
 var bodyParser = require('body-parser');
 var http = require('http')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-var add = require('./routes/add')
-var engines = require('consolidate');
-var engines = require('consolidate');
-
-/*configure express*/
-app.use(logger('combined'));
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(session({ secret: 'supernova', saveUninitialized: true, resave: true }));
-app.use(passport.initialize());
-app.use(passport.session());
-
-/* Session-persisted message middleware*/
-app.use(function (req, res, next) {
-    var err = req.session.error,
-        msg = req.session.notice,
-        success = req.session.success;
-    delete req.session.error;
-    delete req.session.success;
-    delete req.session.notice;
-
-    if (err) res.locals.error = err;
-    if (msg) res.locals.notice = msg;
-    if (success) res.locals.success = success;
-
-    next();
-});
-
-/* Configure express to use handlebars templates */
-var hbs = exphbs.create({
-    defaultLayout: 'main', //we will be creating this layout shortly
-});
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
+var html = require('html');
 /* Connecting to mySQL database */
+
+
 var mysql = require('mysql')
 var myConnection = require('express-myconnection')
 var config = require('./CinderConfig')
@@ -63,9 +22,9 @@ var con = mysql.createConnection({
 });
 
 /* set views */
-app.set('views', __dirname + '/views');
-app.engine('html', engines.mustache);
-app.set('view engine', 'html');
+
+app.set('views', path.join(__dirname + '/views'));
+app.set('view engine', 'ejs');
 
 /*set directory for static files*/
 app.use(express.static(__dirname + '/view/'));
@@ -83,22 +42,15 @@ con.connect(function (err) {
 
 /* list class selection */
 
-app.post('/addClass', urlencodedParser, function (req, res) {
-    var ID = req.body.userId;
-    var pswd = req.body.password;
-    console.log(ID, pswd);
-    /**
-    con.query("UPDATE students SET class1 =?, class2=?, class3 =?, class4 =?, class5 =? WHERE userID = ? AND password = ?", [ID, pswd], function (err, result, fields) {
-        if (err) throw err;
-        console.log(result);
-    });
-    
-     
-    var allClassesArray = []
-    allClassesArray = con.query("SELECT classId FROM classes", function (err, rows) {
+app.post('/viewClass/(:id)', urlencodedParser, function (req, res) {
+    var CID = req.params.id;
+    console.log(CID)
+    query = con.query("SELECT number, days, time, location FROM groups WHERE classId = ?;", [CID], function (err, rows) {
         if (err) throw err;
         console.log(rows);
-    });**/
+        //if (rows <= 0) res.render(path.join(__dirname + '/view/Group_Disp.html'), { data: all });
+        res.render(path.join(__dirname + '/view/Group_Disp.ejs'), { data: rows });
+    });
 });
 
 /* login capability */
@@ -133,7 +85,7 @@ app.post('/add', urlencodedParser, function(req, res, next){
 		if (err) con.query("INSERT into students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
 			if (err) throw err;
             console.log("user added successfully")
-            res.render(path.join(__dirname + '/view/front_page.html'), { ID:ID, pswd:pswd });
+            res.sendFile(path.join(__dirname + '/view/front_page.html'));
 		})
 		else {
 			throw err;
