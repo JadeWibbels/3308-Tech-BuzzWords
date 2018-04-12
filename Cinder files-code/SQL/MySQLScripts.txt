@@ -17,16 +17,16 @@ primary key (classId)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7;
 
 create table if not exists Groups(
-number int AUTO INCREMENT NON NULL;
+number int AUTO_INCREMENT NOT NULL,
 classId int(4),
 days varchar(7),
 time varchar(20),
 location varchar(200),
-primary key (classId)
+primary key (number)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7;
 
 -- insert classes into classes table
-insert into classes(classID, info) values
+insert into Classes(classID, info) values
 (1200, 'Art of Computational Thinking LEC Muzny Grace Ellen'),
 (1300, 'Starting Computing LEC Fleming Ioana Nicolaes'),
 (1320, 'Engineering Applications LEC Zagrodzki Maciej'),
@@ -62,11 +62,11 @@ insert into classes(classID, info) values
 insert into Students(userId, password) values
 ('erin.wibbels@colorado.edu', '3308Rocks');
 
-insert into groups(classId, days, time, location) values
+insert into Groups(classId, days, time, location) values
 (3308, 'MWF', '10;00 am', 'CCES');
 
 --look for existing:
-select * from students
+select * from Students
 	where userId ="erin.wibbels@colorado.edu" and
 	password = 3308rocks;
 	
