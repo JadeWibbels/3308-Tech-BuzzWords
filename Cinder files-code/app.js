@@ -53,6 +53,18 @@ app.post('/viewClass/(:id)', urlencodedParser, function (req, res) {
     });
 });
 
+/* load calendar page*/
+
+app.post('/viewCalendar', urlencodedParser, function (req, res) {
+    console.log("loading Calendar")
+    query = con.query("SELECT number, days, time, location FROM groups;", function (err, rows) {
+        if (err) throw err;
+        console.log(rows);
+        //if (rows <= 0) res.render(path.join(__dirname + '/view/Group_Disp.html'), { data: all });
+        //res.render(path.join(__dirname + '/view/Cal_Disp.ejs'), { data: rows });
+    });
+});
+
 /* login capability */
 app.post('/login', urlencodedParser,function(req, res, next){
 	var ID = req.body.userId;
@@ -69,7 +81,7 @@ app.post('/login', urlencodedParser,function(req, res, next){
 	con.connect(function(err) {
 	if (err) throw err;**/
  	con.query("SELECT * FROM students WHERE userID = ? AND password = ?",[ID,pswd], function (err, result, fields) {
- 		if (err) throw err;
+          if (err) throw err 
  		console.log(result);
  		res.sendFile(path.join(__dirname+'/view/Front_Page.html'));
   		});
@@ -81,15 +93,14 @@ app.post('/add', urlencodedParser, function(req, res, next){
 	var pswd = req.body.password;
 	console.log(ID, pswd); //test passed variables
     var allClassesArray = [];
-	con.query("SELECT * FROM students WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
+	con.query("SELECT * FROM studendts WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
 		if (err) con.query("INSERT into students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
 			if (err) throw err;
             console.log("user added successfully")
-            res.sendFile(path.join(__dirname + '/view/Front_Page.html'));
+            res.sendFile(path.join(__dirname + '/view/front_page.html'));
 		})
 		else {
-
-			res.sendFile(path.join(__dirname + '/view/Front_Page.html'));
+			throw err;
 		}
     });
 });
