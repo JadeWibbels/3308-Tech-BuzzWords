@@ -1,0 +1,78 @@
+<title>Group Display</title>        
+
+<html>
+<link href="/Front_Page.css" rel="stylesheet" type="text/css" >
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel = "stylesheet" type ="text/css" >
+<div class="Top_Nav_Bar" id="Top_Nav_Bar">
+    <a href="Front_Page.html"><img class="Logo_Button" src="/Logo.png"></a>     
+
+    <a href="Log_In.html"><p class="Log_In_Button" id="Logo_Button">Log In</p></a>      
+
+    <a href="Front_Page.html"><p class="Home_Button" id="Home_Button">Home</p></a>      
+
+    <a href="About_Us.html"><p class="About_Us_Button" id="About_Us_Button">About Us</p></a>
+
+</div>      
+<div class="Left_Side_Bar" id="Left_Side_Bar">
+        <h2> Return to Class List</h2>
+        
+        
+</div>
+
+<div class="Right_Side_Bar" id="Right_Side_Bar">
+      
+</div>
+
+<dir class="HeadLineBackground">
+    <img class="HeadLineBackgroundImage" id="HeadLineBackgroundImage" src="/HeadLineBackground.jpg">
+</dir>
+<div class="Headline" id="Headline">
+
+    <h1 class="Name" id="Name">Computer Science Study Group</h1>
+
+    <h2 class="Slogan" id="Slogan">Collaboration | Communication | Computation</h2>
+
+</div>
+<div class="Class_Options" id="Class_Options">
+    <h2 class="Slogan" id="Slogan">Create a new study group</h2>
+    
+</div>
+
+
+
+<div>
+<form method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+<p>
+<label>Name
+<input type="text" name="customer_name" required>
+</label> 
+</p>
+
+<p>
+<label>Phone 
+<input type="tel" name="phone_number">
+</label>
+</p>
+
+<p>
+<label>Email 
+<input type="email" name="email_address">
+</label>
+</p>
+
+<fieldset>
+<legend>Which taxi do you require?</legend>
+<p><label> <input type="radio" name="taxi" required value="car"> Car </label></p>
+<p><label> <input type="radio" name="taxi" required value="van"> Van </label></p>
+<p><label> <input type="radio" name="taxi" required value="tuktuk"> Tuk Tuk </label></p>
+</fieldset>
+
+<p><button>Submit Booking</button></p>
+
+</form>
+</div>
+
+    </body>
+
+</html>
