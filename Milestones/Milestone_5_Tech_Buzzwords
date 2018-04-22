@@ -10,3 +10,19 @@ User Acceptance Tests:
 
 3. A user should be able to view a calendar with study groups on it after logging and clicking on a class. A user will know this works if a calendar auto-populates with the current month and the times of scheduled study groups for the correct class after they click on a class button on the homepage.
 
+Automated Testing:
+Tool used – Mocha and Chai for node.js https://mochajs.org/
+To use: npm install –save -dev mocha
+	npm install –save -dev chai
+the package.json file needs to be updated with 
+"scripts": {
+    "test": "mocha"
+  },
+Then you can run the tests located in the test.js file by simply typing npm test from the root directory. 
+We wrote tests for our mysql queries with 3 cases expected to pass and 1 case expected to fail.
+
+Our test.js file is located: https://github.com/JadeWibbels/3308-Tech-BuzzWords/tree/master/Cinder%20files-code/test
+
+ 
+
+All test cases passed as expected. 
