@@ -1,0 +1,12 @@
+Group Project Milestone 5
+Team: Tech Buzzwords
+Group Members: Dylan Fox, Julio Lopez, Eric Oropezaelwood, Erin “Jade” Wibbels, Yun Ting Chen, Munkhbayan Togtokh
+
+User Acceptance Tests:
+
+1. A user should be able to login using the login screen. If a user does not have an account, a user should be able to create an account. A user will know that they can login if they are redirected to the homepage after clicking submit after entering their password and login info. A user will know if they can make an account if they are successfully redirected to the home page after submitting new information to the create account page. If a user submits login information that is already in use to the create a account page, the user should be redirected to the home page and no errors should be displayed.
+
+2. A user should be able to view a homepage populated with a list of CU Computer Science classes. A user should be able to click on the class buttons and be redirected to a page in which they can view scheduled study groups for their class. A user will know if this works by  clicking on the buttons and verifying that they are redirected to a page with study groups on it.
+
+3. A user should be able to view a calendar with study groups on it after logging and clicking on a class. A user will know this works if a calendar auto-populates with the current month and the times of scheduled study groups for the correct class after they click on a class button on the homepage.
+
