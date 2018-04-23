@@ -162,6 +162,7 @@ body
 	background-color: white;
 	text-align: center;
 	font-family: "Roboto";
+	overflow: scroll;
 }
 
 .mySlides {display: none;}
@@ -169,13 +170,12 @@ body
 /* Slideshow container */
 .slideshow-container
 {
-  background-color: rgb(190,170,104);
-  opacity: .7;
+  background-color: rgb(237, 218, 156);
   width: 100%;
   position: fixed;
   margin: auto;
   left: 70px;
-  top: 70px;
+  top: 210px;
   height: 405px; 
 }
 
@@ -185,7 +185,9 @@ body
 	width: 80%;
 	height: 400px;
 	left: 10%;
-	top: 2px;
+	top: 0;
+	overflow: scroll;
+	margin: 10px;
 }
 
 /* The dots/bullets/indicators */
@@ -293,7 +295,7 @@ body
 	width: 83%;
 	height: 150px;
 	position: fixed;
-	top: 470px;
+	top: 60px;
 	left: 220px;
 	text-align: center;
 	font-family: "Roboto";
@@ -307,13 +309,13 @@ body
 	height: 150px;
 	position: fixed;
 	left: 110px;
-	top: 455px;
+	top: 50px;
 	
 }
 
 .HeadLineBackgroundImage
 {
-	top: 500px;
+	top: 95px;
 	right: 50px;
 	width: 150%;
 	height: 175%;

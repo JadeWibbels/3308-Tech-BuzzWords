@@ -1,3 +1,9 @@
+body
+{
+	height: 2020px;
+	overflow: scroll;
+}
+
 .Top_Nav_Bar
 {
 	width: 100%; height: 50px;
@@ -5,7 +11,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	float: left;
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	border-bottom: 500px;
@@ -58,6 +64,179 @@
 	position: fixed;
 	color: rgb(190,170,104);
 	right: 80px;
+}
+
+.Bios
+{
+	overflow: scroll;
+}
+
+.Dylan
+{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	top: 100px;
+	left: 0;
+}
+
+.Dylan_Pic
+{
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	left: 150px;
+}
+
+.Dylan_Bio
+{
+	display: inline;
+	font-family: "Roboto";
+	position: absolute;
+	color: rgb(190,170,104);
+	text-align: center;
+	left : 500px;
+}
+
+.Jade
+{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	top: 425px;
+	left: 0;
+}
+
+.Jade_Pic
+{
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	right: 150px;
+}
+
+.Jade_Bio
+{
+	display: inline;
+	font-family: "Roboto";
+	position: absolute;
+	color: rgb(190,170,104);
+	text-align: center;
+	right : 500px;
+}
+
+.Eric
+{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	top: 750px;
+	left: 0;
+}
+
+.Eric_Pic
+{
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	left: 150px;
+}
+
+.Eric_Bio
+{
+	display: inline;
+	font-family: "Roboto";
+	position: absolute;
+	color: rgb(190,170,104);
+	text-align: center;
+	left : 500px;
+}
+
+.Bryan
+{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	top: 1075px;
+	left: 0;
+}
+
+.Bryan_Pic
+{
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	right: 150px;
+}
+
+.Bryan_Bio
+{
+	display: inline;
+	font-family: "Roboto";
+	position: absolute;
+	color: rgb(190,170,104);
+	text-align: center;
+	right : 500px;
+}
+
+.Julio
+{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	top: 1400px;
+	left: 0;
+}
+
+.Julio_Pic
+{
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	left: 150px;
+}
+
+.Julio_Bio
+{
+	display: inline;
+	font-family: "Roboto";
+	position: absolute;
+	color: rgb(190,170,104);
+	text-align: center;
+	left : 500px;
+}
+
+.Rosa
+{
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	top: 1725px;
+	left: 0;
+}
+
+.Rosa_Pic
+{
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	right: 150px;
+}
+
+.Rosa_Bio
+{
+	display: inline;
+	font-family: "Roboto";
+	position: absolute;
+	color: rgb(190,170,104);
+	text-align: center;
+	right : 500px;
 }
 
 a:link
