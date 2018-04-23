@@ -26,7 +26,7 @@ body
 	position: fixed;
 	float: left;
 	background-color: rgb(190,170,104);
-	width: 20%;
+	width: 150px;
 	height: 100%;
 	top: 70px;
 	left: 0; 
@@ -153,13 +153,15 @@ body
 
 .Description
 {
-	width: 80%;
-	height: 150px;
-	float: right;
+	width: 90%;
+	height: 400px;
+	float: left;
 	position: fixed;
-	right: 0;
-	top: 480px;
+	left: 150px;
+	top: 600px;
 	background-color: white;
+	text-align: center;
+	font-family: "Roboto";
 }
 
 .mySlides {display: none;}
@@ -167,9 +169,23 @@ body
 /* Slideshow container */
 .slideshow-container
 {
-  max-width: 80%;
-  position: relative;
+  background-color: rgb(190,170,104);
+  opacity: .7;
+  width: 100%;
+  position: fixed;
   margin: auto;
+  left: 70px;
+  top: 70px;
+  height: 405px; 
+}
+
+.Descriptor
+{
+	position: absolute;
+	width: 80%;
+	height: 400px;
+	left: 10%;
+	top: 2px;
 }
 
 /* The dots/bullets/indicators */
@@ -269,6 +285,38 @@ body
 	font-size: 10px;
 	left: 30px;
 	float: left;
+}
+
+.Headline
+{
+	float: left;
+	width: 83%;
+	height: 150px;
+	position: fixed;
+	top: 470px;
+	left: 220px;
+	text-align: center;
+	font-family: "Roboto";
+	color: rgb(190,170,104);
+}
+
+.HeadLineBackground
+{
+	float: left;
+	width: 83%;
+	height: 150px;
+	position: fixed;
+	left: 110px;
+	top: 455px;
+	
+}
+
+.HeadLineBackgroundImage
+{
+	top: 500px;
+	right: 50px;
+	width: 150%;
+	height: 175%;
 }
 
 @-webkit-keyframes fade
