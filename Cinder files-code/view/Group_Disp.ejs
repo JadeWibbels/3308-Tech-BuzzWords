@@ -1,26 +1,26 @@
-<title>Group Display</title>		
+<title>Group Display</title>
 
 <html>
 <link href="/Front_Page.css" rel="stylesheet" type="text/css" >
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel = "stylesheet" type ="text/css" >
 <div class="Top_Nav_Bar" id="Top_Nav_Bar">
-	<a href="Front_Page.html"><img class="Logo_Button" src="/Logo.png"></a>		
+	<a href="Front_Page.html"><img class="Logo_Button" src="/Logo.png"></a>
 
-    <a href="Log_In.html"><p class="Log_In_Button" id="Logo_Button">Log In</p></a>		
+    <a href="Log_In.html"><p class="Log_In_Button" id="Logo_Button">Log In</p></a>
 
-    <a href="Front_Page.html"><p class="Home_Button" id="Home_Button">Home</p></a>		
+    <a href="Front_Page.html"><p class="Home_Button" id="Home_Button">Home</p></a>
 
     <a href="About_Us.html"><p class="About_Us_Button" id="About_Us_Button">About Us</p></a>
 
-</div>		
+</div>
 <div class="Left_Side_Bar" id="Left_Side_Bar">
 		<h2> Return to Class List</h2>
-		
-		
+
+
 </div>
 
 <div class="Right_Side_Bar" id="Right_Side_Bar">
-      
+
 </div>
 
 <dir class="HeadLineBackground">
@@ -43,7 +43,7 @@
             <th>Location</th>
 		</tr>
 		<% if (data) { %>
-			<% data.forEach(function(item){ %>
+			<% data.forEach(function(item){ console.log(item.days)%>
 				<tr>
 					<td><%= item.number %></td>
 					<td><%= item.days %></td>
@@ -53,8 +53,115 @@
 			<% }) %>
 		<% } %>
 	</table>
+
+
+
+
+
+  <div class="table-responseive">
+    <table class="table-hover-cells" id="calendarTable">
+      <thead>
+        <tr>
+            <th id="tableHeader" colspan=7></th>
+        </tr>
+        <tr id="dayOfWeekHeader">
+        </tr>
+      </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 </div>
-    </body>
+<script> var tdata = <%-JSON.stringify(data)%>;
+console.log(tdata) </script>
+<script type="text/JavaScript">
+
+const months = ["January", "February", "March", "April", "May", "June", "July",
+  "August", "September", "October", "November", "December"];
+
+const DateInfo = function () {
+  let today = new Date();
+  this.month = months[today.getMonth()];
+  this.year = today.getFullYear();
+  this.dayOfWeek = today.getDay();
+  this.dayOfMonth = today.getDate();
+  this.numDaysInMonth = new Date(today.getFullYear(), (today.getMonth() + 1), 0).getDate();
+  this.firstDayMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+}
+
+const fillHeaders = function (todaysInfo) {
+  const daysOfWeek = ["Sunday", "Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const calendarMonthHeader = document.getElementById("tableHeader");
+  const calendarWeekHeader = document.getElementById("dayOfWeekHeader")
+  //sets Month Header
+  calendarMonthHeader.innerHTML = todaysInfo.month + " " +
+  todaysInfo.year;
+  calendarMonthHeader.classList.add("text-center");
+
+  daysOfWeek.forEach(function (day) {
+    currentDayOfWeek = calendarWeekHeader.insertCell(-1);
+    currentDayOfWeek.innerHTML = day;
+    currentDayOfWeek.classList.add("text-center");
+
+  });
+}
+
+const fillTable = function (todaysInfo) {
+  const calendarBody = document.getElementById("tableBody");
+  let currentRow, currentColumn, currentCell, weekCounter;
+  let daysInserted = 0;
+  let insertedEnoughDays = false;
+
+  //higher order function to create onClick actions for individual cells
+  const createOnClickFunction = function (currentCell){
+    return function () {
+      if(currentCell.style.backgroundColor ===  "black") {
+        currentCell.style.backgroundColor = "white";
+        currentCell.style.color = "black";
+      } else {
+       currentCell.style.backgroundColor = "black";
+       currentCell.style.color = "white";
+     }
+   }
+ }
+
+   while (!(insertedEnoughDays)) {
+     //insert row to table
+     currentRow = calendarBody.insertRow(-1);
+     //create days of the week to fill  row inserted above
+     for (weekCounter = 0; weekCounter < 7; weekCounter++) {
+       currentCell = currentRow.insertCell(-1);
+
+       if (calendarBody.rows.length === 1 &&
+       weekCounter < todaysInfo.firstDayMonth) {
+         currentCell.innerHTML = "";
+         continue;
+       }
+
+       daysInserted ++;
+       if (daysInserted >= todaysInfo.numDaysInMonth) {
+         insertedEnoughDays = true;
+       }
+
+       if (daysInserted <= todaysInfo.numDaysInMonth) {
+         currentCell.innerHTML = daysInserted;
+         paragraph = document.createElement('p')
+         paragraph.innerHTML = tdata[0].days;
+         paragraph.classList.add("text-center")
+         currentCell.appendChild(paragraph)
+         currentCell.onclick = createOnClickFunction(currentCell);
+         currentCell.classList.add("hoverOver");
+       } else {
+         currentCell.innerHTML = "";
+       }
+     }
+   }
+}
+</script>
+
+<script type="text/javascript">
+  let dateInfo = new DateInfo;
+  fillHeaders(dateInfo)
+  fillTable(dateInfo);
+</script>
+</body>
 
 </html>
-

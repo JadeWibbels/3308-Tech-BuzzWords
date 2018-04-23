@@ -102,10 +102,10 @@ app.post('/add', urlencodedParser, function(req, res, next){
 	console.log(ID, pswd); //test passed variables
     var allClassesArray = [];
 	con.query("SELECT * FROM studendts WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
-		if (err) con.query("INSERT into students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
+		if (result.length == 0) con.query("INSERT into students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
 			if (err) throw err;
-            console.log("user added successfully")
-            res.sendFile(path.join(__dirname + '/view/front_page.html'));
+      console.log("user added successfully")
+      res.sendFile(path.join(__dirname + '/view/front_page.html'));
 		})
 		else {
 			throw err;
