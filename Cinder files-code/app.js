@@ -70,7 +70,7 @@ app.post('/login', urlencodedParser,function(req, res, next){
 	var ID = req.body.userId;
 	var pswd = req.body.password;
 	console.log(ID,pswd);
-	
+
 	//this tests connection
 	/**con.connect(function(err) {
 		if (err) throw err;
@@ -81,9 +81,17 @@ app.post('/login', urlencodedParser,function(req, res, next){
 	con.connect(function(err) {
 	if (err) throw err;**/
  	con.query("SELECT * FROM students WHERE userID = ? AND password = ?",[ID,pswd], function (err, result, fields) {
-          if (err) throw err 
+          if (err) throw err
  		console.log(result);
- 		res.sendFile(path.join(__dirname+'/view/Front_Page.html'));
+    if (result.length != 0) {
+      res.sendFile(path.join(__dirname+'/view/Front_Page.html'));
+      //console.log("test");
+      console.log(result);
+    }
+    else {
+    res.sendFile(path.join(__dirname + '/view/Log_In_Failed.html'));
+  }
+
   		});
 });
 
