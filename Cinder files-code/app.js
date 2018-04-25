@@ -106,7 +106,7 @@ app.post('/login', urlencodedParser,function(req, res, next){
 	var ID = req.body.userId;
 	var pswd = req.body.password;
 	console.log(ID,pswd);
-	
+
 	//this tests connection
 	/**con.connect(function(err) {
 		if (err) throw err;
@@ -116,10 +116,19 @@ app.post('/login', urlencodedParser,function(req, res, next){
 	/**this tests returns/ working code!
 	con.connect(function(err) {
 	if (err) throw err;**/
+
  	con.query("SELECT * FROM Students WHERE userID = ? AND password = ?",[ID,pswd], function (err, result, fields) {
           if (err) throw err; 
  		console.log(result);
- 		res.sendFile(path.join(__dirname+'/view/Front_Page.html'));
+    if (result.length != 0) {
+      res.sendFile(path.join(__dirname+'/view/Front_Page.html'));
+      //console.log("test");
+      console.log(result);
+    }
+    else {
+    res.sendFile(path.join(__dirname + '/view/Log_In_Failed.html'));
+  }
+
   		});
 });
 
@@ -129,6 +138,7 @@ app.post('/add', urlencodedParser, function(req, res, next){
 	var pswd = req.body.password;
 	console.log(ID, pswd); //test passed variables
     var allClassesArray = [];
+
 	con.query("SELECT * FROM Students WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
 		if (err) con.query("INSERT into Students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
 			if (err) throw err;
