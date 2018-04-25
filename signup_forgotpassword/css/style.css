@@ -88,6 +88,7 @@ body:before {
 .SignUp:hover .SignUpHeader {
   color: #000;
 }
+
 .SignUp:hover .SignUpHeader:after {
   top: -50%;
 }
