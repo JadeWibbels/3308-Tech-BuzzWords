@@ -45,7 +45,7 @@ con.connect(function (err) {
 app.post('/viewClass/(:id)', urlencodedParser, function (req, res) {
     var CID = req.params.id;
     console.log(CID)
-    query = con.query("SELECT number, days, time, location FROM groups WHERE classId = ?;", [CID], function (err, rows) {
+    query = con.query("SELECT number, days, time, location FROM Groups WHERE classId = ?;", [CID], function (err, rows) {
         if (err) throw err;
         console.log(rows);
         //if (rows <= 0) res.render(path.join(__dirname + '/view/Group_Disp.html'), { data: all });
@@ -57,13 +57,49 @@ app.post('/viewClass/(:id)', urlencodedParser, function (req, res) {
 
 app.post('/viewCalendar', urlencodedParser, function (req, res) {
     console.log("loading Calendar")
-    query = con.query("SELECT number, days, time, location FROM groups;", function (err, rows) {
+    query = con.query("SELECT number, days, time, location FROM Groups;", function (err, rows) {
         if (err) throw err;
         console.log(rows);
         //if (rows <= 0) res.render(path.join(__dirname + '/view/Group_Disp.html'), { data: all });
         //res.render(path.join(__dirname + '/view/Cal_Disp.ejs'), { data: rows });
     });
 });
+
+
+/* Add Group page */
+
+app.post('/addGroup', urlencodedParser, function (req, res) {
+    var CID = req.params.id;
+    console.log(CID)
+    query = con.query("SELECT number, days, time, location FROM Groups", [CID], function (err, rows) {
+        if (err) throw err;
+        console.log(rows);
+        // Need to render to a new .ejs page, will make that once other stuff is done
+        res.render(path.join(__dirname + '/view/Add_Group.ejs'), { data: rows });
+    });
+});
+
+/*
+app.post('/addGroup', urlencodedParser, function(req, res, next){
+    var classID = req.body.classId;
+    var dys = req.body.days;
+    var tme = req.body.time;
+    var loc = req.body.location;
+    //console.log(ID, pswd); //test passed variables
+    var allClassesArray = [];
+    con.query("SELECT * FROM Groups WHERE classId= ? AND days = ? AND time = ? AND location = ?", [classID, dys, tme, loc], function(err, result, fields){
+        if (err) con.query("INSERT into Groups (classId, days, time, location) values ( ?, ?, ?, ?);", [classID, dys, tme, loc], function(err, results) {
+            if (err) throw err;
+            console.log("user added successfully")
+            res.sendFile(path.join(__dirname + '/view/Add_Group.ejs'));
+        })
+        else {
+            throw err;
+        }
+    });
+});
+*/
+
 
 /* login capability */
 app.post('/login', urlencodedParser,function(req, res, next){
@@ -80,8 +116,8 @@ app.post('/login', urlencodedParser,function(req, res, next){
 	/**this tests returns/ working code!
 	con.connect(function(err) {
 	if (err) throw err;**/
- 	con.query("SELECT * FROM students WHERE userID = ? AND password = ?",[ID,pswd], function (err, result, fields) {
-          if (err) throw err 
+ 	con.query("SELECT * FROM Students WHERE userID = ? AND password = ?",[ID,pswd], function (err, result, fields) {
+          if (err) throw err; 
  		console.log(result);
  		res.sendFile(path.join(__dirname+'/view/Front_Page.html'));
   		});
@@ -93,11 +129,11 @@ app.post('/add', urlencodedParser, function(req, res, next){
 	var pswd = req.body.password;
 	console.log(ID, pswd); //test passed variables
     var allClassesArray = [];
-	con.query("SELECT * FROM studendts WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
-		if (err) con.query("INSERT into students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
+	con.query("SELECT * FROM Students WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
+		if (err) con.query("INSERT into Students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
 			if (err) throw err;
             console.log("user added successfully")
-            res.sendFile(path.join(__dirname + '/view/front_page.html'));
+            res.sendFile(path.join(__dirname + '/view/Front_Page.html'));
 		})
 		else {
 			throw err;
