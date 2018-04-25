@@ -1,0 +1,333 @@
+body
+{
+	overflow: scroll;
+}
+
+.Top_Nav_Bar
+{
+	width: 100%; height: 50px;
+	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-bottom: 500px;
+	border-bottom-color: rgb(190,170,104); 
+	border: 3px solid rgb(190,170,104);
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.Side_Bar
+{
+	position: fixed;
+	float: left;
+	background-color: rgb(190,170,104);
+	width: 150px;
+	height: 100%;
+	top: 70px;
+	left: 0; 
+}
+
+.Logo_Button
+{
+	float: left;
+	padding-left: 25px;
+	display: inline;
+	height: 50px;
+	width: 75px;
+}
+
+.Log_In_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 20px;
+}
+
+.Log_In_Button2
+{
+	color: black;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 20px;
+	left: 30px;
+}
+
+.Log_In_Button3
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	right: 30px;
+	float: right;
+}
+
+.Home_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 160px;
+}
+
+.Home_Button2
+{
+	color: black;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 20px;
+	left: 30px;
+}
+
+.Home_Button3
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	right: 30px;
+	float: right;
+}
+
+.About_Us_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 80px;
+}
+
+.About_Us_Button2
+{
+	color: black;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 20px;
+	left: 30px;
+}
+
+.About_Us_Button3
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	right: 30px;
+	float: right;
+}
+
+.Bottom_Bar
+{
+	float: right;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: black;
+}
+
+.Description
+{
+	width: 90%;
+	height: 400px;
+	float: left;
+	position: fixed;
+	left: 150px;
+	top: 600px;
+	background-color: white;
+	text-align: center;
+	font-family: "Roboto";
+	overflow: scroll;
+}
+
+.mySlides {display: none;}
+
+/* Slideshow container */
+.slideshow-container
+{
+  background-color: rgb(237, 218, 156);
+  width: 100%;
+  position: fixed;
+  margin: auto;
+  left: 70px;
+  top: 210px;
+  height: 405px; 
+}
+
+.Descriptor
+{
+	position: absolute;
+	width: 80%;
+	height: 400px;
+	left: 10%;
+	top: 0;
+	overflow: scroll;
+	margin: 10px;
+}
+
+/* The dots/bullets/indicators */
+.dot
+{
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+
+/* Fading animation */
+.fade
+{
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.Bryan
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 190px;
+	float: left;
+}
+
+.Jade
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 300px;
+	float: left;
+}
+
+.Dylan
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 380px;
+	float: left;
+}
+
+.Julio
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 455px;
+	float: left;
+}
+
+.Eric
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 530px;
+	float: left;
+}
+
+.Rosa
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 630px;
+	float: left;
+}
+
+.Class_Info
+{
+	color: white;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	font-size: 10px;
+	left: 30px;
+	float: left;
+}
+
+.Headline
+{
+	float: left;
+	width: 83%;
+	height: 150px;
+	position: fixed;
+	top: 60px;
+	left: 220px;
+	text-align: center;
+	font-family: "Roboto";
+	color: rgb(190,170,104);
+}
+
+.HeadLineBackground
+{
+	float: left;
+	width: 83%;
+	height: 150px;
+	position: fixed;
+	left: 110px;
+	top: 50px;
+	
+}
+
+.HeadLineBackgroundImage
+{
+	top: 95px;
+	right: 50px;
+	width: 150%;
+	height: 175%;
+}
+
+@-webkit-keyframes fade
+{
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+@keyframes fade {
+ 	from {opacity: .4} 
+ 	to {opacity: 1}
+}
