@@ -8,4 +8,5 @@ $(document).on('click', '.SignUp', function (e) {
 
 $(document).on('submit', 'form', function (e) {
   e.preventDefault();
+  window.open("file:///Users/Rosa/Desktop/3308-Tech-BuzzWords/LogInPage/Log_In.html");
 });
