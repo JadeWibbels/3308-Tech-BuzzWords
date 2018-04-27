@@ -2,10 +2,10 @@
 <html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Add Group</title>		<!--Log In Title-->
-	<link rel="stylesheet" type="text/css" href="Front_Page.css">		<!--Link to CSS file-->
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>		<!--Link to Roboto Font -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Group</title>		<!--Log In Title-->
+    <link rel="stylesheet" type="text/css" href="Front_Page.css">		<!--Link to CSS file-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>		<!--Link to Roboto Font -->
 </head>
 
 <body>
@@ -28,42 +28,42 @@
         <h2><p>To View Calendar Click Image below</p></h2>
         <form method="post" action="/viewCalendar">
             <div>
-                <input type="image" src="calendar-icon.jpg" style="width:200px;height:200px" >
+                <input type="image" src="calendar-icon.jpg" style="width:200px;height:200px">
             </div>
         </form>
 
     </div>
 
-        <div class="Right_Side_Bar" id="Right_Side_Bar">
-            <!--Right Side Bar-->
+    <div class="Right_Side_Bar" id="Right_Side_Bar">
+        <!--Right Side Bar-->
 
-        </div>
+    </div>
 
-        <dir class="HeadLineBackground">
-            <img class="HeadLineBackgroundImage" id="HeadLineBackgroundImage" src="HeadLineBackground.jpg">
-        </dir>
+    <dir class="HeadLineBackground">
+        <img class="HeadLineBackgroundImage" id="HeadLineBackgroundImage" src="HeadLineBackground.jpg">
+    </dir>
 
-        <div class="Headline" id="Headline">
+    <div class="Headline" id="Headline">
 
-            <h1 class="Name" id="Name">Computer Science Study Group</h1>
+        <h1 class="Name" id="Name">Computer Science Study Group</h1>
 
-            <h2 class="Slogan" id="Slogan">Collaboration | Communication | Computation</h2>
+        <h2 class="Slogan" id="Slogan">Collaboration | Communication | Computation</h2>
 
-        </div>
+    </div>
 
-        <div class="Class_Options" id="Class_Options">
-            <form action="/Front_Page.html" method="post"> 
-                Class name:<br>
-                <input type="text" name="name" value="CSCI XXXX"><br>
-                Days to meet:<br>
-                <input type="text" name="name2" value="MTWRF"><br>
-                Time to meet:<br>
-                <input type="text" name="name" value="12:30"><br>
-                Location:<br>
-                <input type="text" name="name" value="Building name"><br>
-                <input type="submit">
-            </form>
-        </div>
+    <div class="Class_Options" id="Class_Options">
+        <form action="/addGroup" method="post">
+            Class name:<br>
+            <input type="text" name="classId" value="CSCI XXXX"><br>
+            Days to meet:<br>
+            <input type="text" name="days" value="MTWRF"><br>
+            Time to meet:<br>
+            <input type="text" name="time" value="12:30"><br>
+            Location:<br>
+            <input type="text" name="location" value="Building name"><br>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 
 </html>
