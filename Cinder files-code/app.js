@@ -68,37 +68,19 @@ app.post('/viewCalendar', urlencodedParser, function (req, res) {
 
 /* Add Group page */
 
-app.post('/addGroup', urlencodedParser, function (req, res) {
-    var CID = req.params.id;
-    console.log(CID)
-    query = con.query("SELECT number, days, time, location FROM Groups", [CID], function (err, rows) {
-        if (err) throw err;
-        console.log(rows);
-        // Need to render to a new .ejs page, will make that once other stuff is done
-        res.render(path.join(__dirname + '/view/Add_Group.ejs'), { data: rows });
-    });
-});
-
-/*
-app.post('/addGroup', urlencodedParser, function(req, res, next){
+app.post('/addGroup', urlencodedParser, function (req, res, next) {
     var classID = req.body.classId;
     var dys = req.body.days;
     var tme = req.body.time;
     var loc = req.body.location;
     //console.log(ID, pswd); //test passed variables
-    var allClassesArray = [];
-    con.query("SELECT * FROM Groups WHERE classId= ? AND days = ? AND time = ? AND location = ?", [classID, dys, tme, loc], function(err, result, fields){
-        if (err) con.query("INSERT into Groups (classId, days, time, location) values ( ?, ?, ?, ?);", [classID, dys, tme, loc], function(err, results) {
-            if (err) throw err;
-            console.log("user added successfully")
-            res.sendFile(path.join(__dirname + '/view/Add_Group.ejs'));
-        })
-        else {
-            throw err;
-        }
+    //var allClassesArray = [];
+    con.query("INSERT into Groups (classId, days, time, location) values ( ?, ?, ?, ?);", [classID, dys, tme, loc], function (err, results) {
+        if (err) throw err;
+        console.log("group added successfully")
+        res.sendFile(path.join(__dirname + '/view/Front_Page.html'));
     });
 });
-*/
 
 
 /* login capability */
