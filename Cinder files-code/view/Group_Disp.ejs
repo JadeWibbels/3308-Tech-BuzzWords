@@ -87,15 +87,31 @@ const DateInfo = function () {
   this.firstDayMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
 }
 
+
+//higher order function to create onClick actions for individual cells
+const createOnClickFunction = function (currentCell){
+  return function () {
+    if(currentCell.style.backgroundColor ===  "black") {
+      currentCell.style.backgroundColor = "white";
+      currentCell.style.color = "black";
+    } else {
+     currentCell.style.backgroundColor = "black";
+     currentCell.style.color = "white";
+   }
+ }
+}
+
 const fillHeaders = function (todaysInfo) {
+
   const daysOfWeek = ["Sunday", "Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	//geting DOM elements to set to year, month, and day of week header.
   const calendarMonthHeader = document.getElementById("tableHeader");
-  const calendarWeekHeader = document.getElementById("dayOfWeekHeader")
-  //sets Month Header
+  const calendarWeekHeader = document.getElementById("dayOfWeekHeader");
+  //sets Year/Month header
   calendarMonthHeader.innerHTML = todaysInfo.month + " " +
   todaysInfo.year;
   calendarMonthHeader.classList.add("text-center");
-
+	//Sets day of week headers
   daysOfWeek.forEach(function (day) {
     currentDayOfWeek = calendarWeekHeader.insertCell(-1);
     currentDayOfWeek.innerHTML = day;
@@ -110,26 +126,14 @@ const fillTable = function (todaysInfo) {
   let daysInserted = 0;
   let insertedEnoughDays = false;
 
-  //higher order function to create onClick actions for individual cells
-  const createOnClickFunction = function (currentCell){
-    return function () {
-      if(currentCell.style.backgroundColor ===  "black") {
-        currentCell.style.backgroundColor = "white";
-        currentCell.style.color = "black";
-      } else {
-       currentCell.style.backgroundColor = "black";
-       currentCell.style.color = "white";
-     }
-   }
- }
 
    while (!(insertedEnoughDays)) {
      //insert row to table
      currentRow = calendarBody.insertRow(-1);
-     //create days of the week to fill  row inserted above
+     //create days of the week to fill  row inserted above. Leave whole row if the month ends early.
      for (weekCounter = 0; weekCounter < 7; weekCounter++) {
        currentCell = currentRow.insertCell(-1);
-
+			 //don't insert numbers or events if day is before start of month
        if (calendarBody.rows.length === 1 &&
        weekCounter < todaysInfo.firstDayMonth) {
          currentCell.innerHTML = "";
@@ -140,15 +144,40 @@ const fillTable = function (todaysInfo) {
        if (daysInserted >= todaysInfo.numDaysInMonth) {
          insertedEnoughDays = true;
        }
-
+			 //insert cell w/ number if day exists, insert groups if study group exists
        if (daysInserted <= todaysInfo.numDaysInMonth) {
          currentCell.innerHTML = daysInserted;
          paragraph = document.createElement('p')
-         paragraph.innerHTML = tdata[0].days;
+				 var day;
+				 //days of week to check against days field in database
+				 switch (weekCounter) {
+
+					 case (0): day = "S";
+					 					break;
+					case (1): day = "M";
+										break;
+					case (2): day = "T";
+										break;
+					case (3): day = "W";
+										break;
+					case (4): day = "Th";
+										break;
+					case(5): day = "F";
+										break;
+					case(6): day = "Sa";
+										break;
+
+				 }
+				 tdata.forEach((studyGroup) => {
+					 if (studyGroup.days.includes(day)){
+						paragraph.innerHTML = studyGroup.time + " location: " + studyGroup.location;
+					 }
+				 });
          paragraph.classList.add("text-center")
          currentCell.appendChild(paragraph)
          currentCell.onclick = createOnClickFunction(currentCell);
-         currentCell.classList.add("hoverOver");
+
+				 //Don't insert day number if month has already ended.
        } else {
          currentCell.innerHTML = "";
        }
