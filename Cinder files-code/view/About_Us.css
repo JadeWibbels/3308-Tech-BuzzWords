@@ -2,6 +2,7 @@ body
 {
 	height: 2020px;
 	overflow: scroll;
+	background-color: lightgrey;
 }
 
 .Top_Nav_Bar
@@ -80,6 +81,7 @@ body
 	top: 100px;
 	left: 0;
 	display: inline-block;
+	background-color: lightgrey;
 }
 
 .Dylan_Pic
@@ -111,6 +113,7 @@ body
 	background-color: white;
 	top: 425px;
 	display: inline-block;
+	background-color: lightgrey;
 }
 
 .Jade_Pic
@@ -143,6 +146,7 @@ body
 	background-color: white;
 	top: 750px;
 	left: 0;
+	background-color: lightgrey;
 }
 
 .Eric_Pic
@@ -175,6 +179,7 @@ body
 	background-color: white;
 	top: 1075px;
 	left: 0;
+	background-color: lightgrey;
 }
 
 .Bryan_Pic
@@ -206,6 +211,7 @@ body
 	background-color: white;
 	top: 1400px;
 	left: 0;
+	background-color: lightgrey;
 }
 
 .Julio_Pic
@@ -213,7 +219,7 @@ body
 	position: absolute;
 	width: 200px;
 	height: 300px;
-	left: 150px;
+	left: 50px;
 }
 
 .Julio_Bio
@@ -224,6 +230,10 @@ body
 	color: rgb(190,170,104);
 	text-align: center;
 	left : 500px;
+	left: 250px;
+	top: 70px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .Rosa
@@ -234,14 +244,15 @@ body
 	background-color: white;
 	top: 1725px;
 	left: 0;
+	background-color: lightgrey;
 }
 
 .Rosa_Pic
 {
 	position: absolute;
-	width: 200px;
+	width: 300px;
 	height: 300px;
-	right: 150px;
+	right: 50px;
 }
 
 .Rosa_Bio
@@ -251,7 +262,10 @@ body
 	position: absolute;
 	color: rgb(190,170,104);
 	text-align: center;
-	right : 500px;
+	right : 400px;
+	top: 70px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 a:link
