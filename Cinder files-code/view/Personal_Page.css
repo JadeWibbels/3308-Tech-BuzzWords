@@ -52,6 +52,16 @@ body
 	overflow: scroll;
 }
 
+.AddText
+{
+	color: rgb(190,170,104);
+	margin: 10px;
+	font-family: "Roboto";
+	text-align: center;
+	font-size: 29px;
+	margin: 20px;
+}
+
 .Logo_Button
 {
 	float: left;
