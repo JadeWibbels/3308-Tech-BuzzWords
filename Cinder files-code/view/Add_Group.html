@@ -35,11 +35,6 @@
 
     </div>
 
-    <div class="Right_Side_Bar" id="Right_Side_Bar">
-        <!--Right Side Bar-->
-
-    </div>
-
     <dir class="HeadLineBackground">
         <img class="HeadLineBackgroundImage" id="HeadLineBackgroundImage" src="HeadLineBackground.jpg">
     </dir>
@@ -52,17 +47,17 @@
 
     </div>
 
-    <div class="Class_Options" id="Class_Options">
+    <div class="AddingClasses" id="AddingClasses">
         <form action="/addGroup" method="post">
-            Class name:<br>
-            <input type="text" name="classId" value="CSCI XXXX"><br>
-            Days to meet:<br>
-            <input type="text" name="days" value="MTWRF"><br>
-            Time to meet:<br>
-            <input type="text" name="time" value="12:30"><br>
-            Location:<br>
-            <input type="text" name="location" value="Building name"><br>
-            <input type="submit">
+            <h2 class="Class_Name">Class name: </h2>
+            <input type="text" name="classId" placeholder = "CSCI XXXX" class="boxes"><br>
+            <h2 class="Class_Name">Days to meet:</h2>
+            <input type="text" name="days" placeholder = "MTWRF" class="boxes"><br>
+            <h2 class="Class_Name">Time to meet:</h2>
+            <input type="text" name="time" placeholder = "12:30" class="boxes"><br>
+            <h2 class="Class_Name">Location:</h2>
+            <input type="text" name="location" placeholder = "Building name" class="boxes"><br><br>
+            <input type="submit" class="boxes">
         </form>
     </div>
 </body>
