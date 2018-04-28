@@ -12,8 +12,8 @@ $(document).on('submit', 'form', function (e)
  {
   e.preventDefault();
   console.log($('#email').val())
-  if($('#email').val() != "" && $('#pass').val() != "") {
-  	window.open("/view/Log_In.html");
+ if($('#email').val() != "" && $('#pass').val() != "") {
+  	window.open("../Cinder files-code/view/Log_In.html");
   }
    
   });
