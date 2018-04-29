@@ -57,11 +57,11 @@ app.post('/viewClass/(:id)', urlencodedParser, function (req, res) {
 
 app.post('/viewCalendar', urlencodedParser, function (req, res) {
     console.log("loading Calendar")
-    query = con.query("SELECT number, days, time, location FROM Groups;", function (err, rows) {
+    query = con.query("SELECT number, Groups.classId, days, time, location, info FROM Groups INNER JOIN classes ON Groups.classId = classes.classId;", function (err, rows) {
         if (err) throw err;
         console.log(rows);
         //if (rows <= 0) res.render(path.join(__dirname + '/view/Group_Disp.html'), { data: all });
-        //res.render(path.join(__dirname + '/view/Cal_Disp.ejs'), { data: rows });
+        res.render(path.join(__dirname + '/view/Group_Disp.ejs'), { data: rows });
     });
 });
 
