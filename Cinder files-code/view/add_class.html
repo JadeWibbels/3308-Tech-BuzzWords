@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Class</title>		<!--Log In Title-->
-    <link rel="stylesheet" type="text/css" href="Front_Page.css">		<!--Link to CSS file-->
+    <link rel="stylesheet" type="text/css" href="add_class.css">		<!--Link to CSS file-->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>		<!--Link to Roboto Font -->
 
 </head>
@@ -28,10 +28,14 @@
     <div class="Left_Side_Bar" id="Left_Side_Bar">
         <!--Left Side Bar-->
 
-    </div>
+        <a class="yourClass" href="Personal_Page.html"><h2>Your Classes</h2></a>
 
-    <div class="Right_Side_Bar" id="Right_Side_Bar">
-        <!--Right Side Bar-->
+        <h2 class="CalSel">To View Calendar Click Image Below</h2>
+        <form method="post" action="/viewCalendar">
+            <div>
+                <input class="CalButton" type="image" src="calendar-icon.jpg" style="width:200px;height:200px" >
+            </div>
+        </form>
 
     </div>
 
@@ -49,7 +53,8 @@
     <script>var classes = "<% classes %>";</script>
     <div class="Class_Options" id="Class_Options">
 
-        <div border="1" cellpadding="7" cellspacing="7">
+        <div class="Adding_Classes" border="1" cellpadding="7" cellspacing="7">
+            <h2 class="Class_Text">Select a Class You Would Like to Join</h2>
             <form  action="/getJson" method="post">
                 <select class="classes" data-style="btn-info" name="classes">
                     

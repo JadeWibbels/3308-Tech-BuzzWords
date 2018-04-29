@@ -1,0 +1,179 @@
+.Top_Nav_Bar
+{
+	width: 100%; height: 50px;
+	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 0;
+	border: 3px solid rgb(190,170,104);
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.Logo_Button
+{
+	float: left;
+	padding-left: 25px;
+	display: inline;
+	height: 50px;
+	width: 75px;
+}
+
+.Log_In_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 20px;
+}
+
+.Home_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 160px;
+}
+
+.Log_In_Window
+{
+	left: 50%;
+	top: 50%;
+	width: 600px; height: 55%;
+	float: center;
+	text-align: center;
+	border: 3px solid rgb(190,170,104);
+	background-color: grey;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.About_Us_Button
+{
+	float: right;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	right: 80px;
+}
+
+.Background
+{
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	top: 73px;
+	position: fixed;
+}
+
+.Top_Bar
+{
+	width: 100%;
+	height: 20%;
+	background-color: black;
+	border: 3px solid rgb(190,170,104);
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.Log_In_Header
+{
+	display: inline;
+	font-family: "Roboto";
+	position: fixed;
+	color: rgb(190,170,104);
+	left: 45%;
+}
+
+.Log_In_Info
+{
+	position: fixed;
+	width: 100%;
+	height: 80%;
+	top: 35%;
+	float: left;
+}
+
+#Info
+{
+	top: 2%;
+	clear: both;
+	font-family: "Roboto";
+	color: rgb(190,170,104);
+	position: relative;
+}
+
+.formControl
+{
+	top: 40%;
+	clear: both;
+	position: relative;
+	display: inline;
+	width: 400px;
+	height: 20px;
+}
+
+.submit
+{
+	clear: both;
+	position: fixed;
+	float: right;
+	bottom: 15%;
+	right: 45%;
+	border-radius: 8px;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: rgb(190,170,104);
+	border-color: rgb(190,170,104);
+	font-family: "Roboto";
+	font-size: 20px;
+
+}
+
+.Failed_LogIn
+{
+	position: fixed;
+	top: 20%;
+	color: red;
+	text-align: center;
+	left: 10%;
+	font-family: "Roboto";
+}
+
+#Create_Account
+{
+	clear: left;
+	position: fixed;
+	bottom: 0%;
+	left: 32%;
+	color: rgb(190,170,104);
+}
+
+#Forgot_Password
+{
+	clear: right;
+	position: fixed;
+	bottom: 0%;
+	left: 50%;
+	color: rgb(190,170,104);
+}
