@@ -115,22 +115,18 @@ app.post('/login', urlencodedParser,function(req, res, next){
 });
 
 /* add new user */
-app.post('/add', urlencodedParser, function(req, res, next){
-	var ID = req.body.userId;
+app.post('/add', urlencodedParser, function (req, res, next) {
+    var ID = req.body.userId;
 	var pswd = req.body.password;
 	console.log(ID, pswd); //test passed variables
-    var allClassesArray = [];
-
-	con.query("SELECT * FROM Students WHERE userId= ? AND password = ?", [ID, pswd], function(err, result, fields){
-		if (err) con.query("INSERT into Students (userId, password) values ( ?, ?);", [ID, pswd], function(err, results) {
-			if (err) throw err;
+    
+    con.query("SELECT * FROM Students WHERE userId= ? AND password = ?", [ID, pswd], function (err, result, fields) {
+        con.query("INSERT into Students (userId, password) values ( ?, ?);", [ID, pswd], function (err, results) {
+            if (err) throw err;
             console.log("user added successfully")
             res.sendFile(path.join(__dirname + '/view/Front_Page.html'));
-		})
-		else {
-			throw err;
-		}
-    });
+        })
+    })
 });
 
 /* list class selection */

@@ -1,43 +1,38 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" >
 
 <head>
-  <meta charset="UTF-8">
-  <title>DailyUI #001 Sign up form</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>DailyUI #001 Sign up form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  
-      <link rel="stylesheet" href="style.css">
 
-  
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-  <input id="input" type="checkbox" />
-<article class="SignUp">
-  <label  class="SignUpHeader" for="input" role="button">Sign up <span class="SignUpHeader__close">&times;</span></label>
-  <form class="SignUpForm" action="/view/log_In.html">
-    <div class="SignUpField SignUpField--email">
-      <label class="SignUpField__label" for="email">Email</label>
-      <input class="SignUpField__input" id="email" type="email" placeholder="email address"/>
-    </div>
-    
-    <div class="SignUpField SignUpField--pass">
-      <label class="SignUpField__label" for="pass">Password</label>
-      <input class="SignUpField__input" id="pass" type="password" placeholder="password"/>
-    </div>
-    <form action="yourpage.com/sitepage" > 
-<!--     <input type="button" value="Send" class="SignUpForm__submit" onclick="">
- -->      <input type="submit" class="SignUpForm__submit" >Submit</button>
+    <input id="input" type="checkbox" />
+    <article class="SignUp">
+        <label class="SignUpHeader" for="input" role="button">Sign up <span class="SignUpHeader__close">&times;</span></label>
+        <form class="SignUpForm" action="/add" method="post">
+            <div class="SignUpField SignUpField--email">
+                <label class="SignUpField__label" for="email">Email</label>
+                <input class="SignUpField__input" type="text" name="userId" placeholder="email address" />
+            </div>
+
+            <div class="SignUpField SignUpField--pass">
+                <label class="SignUpField__label" for="pass">Password</label>
+                <input class="SignUpField__input" type="text" name="password" placeholder="password" />
+            </div>
+            <input type="submit" class="SignUpForm__submit" value="Submit" />
   </form>
 </article>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 
-  
-
-    <script  src="index.js"></script>
+    <script src="index.js"></script>
 
 
 
