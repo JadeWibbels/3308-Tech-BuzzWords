@@ -4,7 +4,7 @@
 <link href="/Front_Page.css" rel="stylesheet" type="text/css" >
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel = "stylesheet" type ="text/css" >
 <div class="Top_Nav_Bar" id="Top_Nav_Bar">
-	<a href="Front_Page.html"><img class="Logo_Button" src="/Logo.png"></a>
+	<a href="/Front_Page.html"><img class="Logo_Button" src="/Logo.png"></a>
 
     <a href="/Log_In.html"><p class="Log_In_Button" id="Logo_Button">Log In</p></a>
 
@@ -14,7 +14,8 @@
 
 </div>
 <div class="Left_Side_Bar" id="Left_Side_Bar">
-	<a href="/Front_Page.html"><p class="Home_Button" id="Home_Button">Return to Class List</p></a>
+  <h3><a href="/Front_Page.html"><p class="Home_Button" id="Home_Button">Return to Class List</p></a>
+   </h3>
 
   <h3>
     <a href ="/Add_Group.html">Add Group</a>
@@ -51,6 +52,7 @@
     <table>
 		<tr>
 			<th>Group Number</th>
+      <th>Class ID</th>
             <th>Meets on</th>
             <th>Times</th>
             <th>Location</th>
@@ -58,6 +60,9 @@
 			<% data.forEach(function(item){ %>
 				<tr>
 					<td><%= item.number %></td>
+          <td>
+            <%= item.classId %>
+          </td>
 					<td><%= item.days %></td>
 					<td><%= item.time %></td>
 					<td><%= item.location %></td>
