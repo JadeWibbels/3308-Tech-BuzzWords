@@ -122,7 +122,7 @@ app.post('/add', urlencodedParser, function (req, res, next) {
     
     con.query("SELECT * FROM Students WHERE userId= ? AND password = ?", [ID, pswd], function (err, result, fields) {
         con.query("INSERT into Students (userId, password) values ( ?, ?);", [ID, pswd], function (err, results) {
-            if (err) throw err;
+            if (err) res.sendFile(path.join(__dirname + '/view/New_User_Failed.html'));
             console.log("user added successfully")
             res.sendFile(path.join(__dirname + '/view/Front_Page.html'));
         })
