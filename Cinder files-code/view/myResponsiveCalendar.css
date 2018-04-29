@@ -34,3 +34,8 @@ table
   width: 360px;
   text-align: center;
 }
+
+th, td, tr
+{
+  border: 1px solid black;
+}
