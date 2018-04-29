@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var http = require('http')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var html = require('html');
+var nodemailer = require('nodemailer');
 /* Connecting to mySQL database */
 
 
@@ -112,6 +113,59 @@ app.post('/login', urlencodedParser,function(req, res, next){
   }
 
   		});
+});
+
+/* forgot password */
+app.post('/forgot', urlencodedParser, function (req, res, next) {
+    var ID = req.body.userId;
+    console.log(ID);
+
+    //this tests connection
+	/**con.connect(function(err) {
+		if (err) throw err;
+		console.log("Connected!");
+	});**/
+
+	/**this tests returns/ working code!
+	con.connect(function(err) {
+	if (err) throw err;**/
+
+    con.query("SELECT password FROM Students WHERE userID = ?", [ID], function (err, result, fields) {
+        if (err) throw err;
+
+        var password = JSON.stringify(result);
+        console.log("password is", password);
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'cinder.study@gmail.com',
+                pass: '3308rocks'
+            }
+        });
+
+        var mailOptions = {
+            from: 'cinder.study@gmail.com',
+            to: ID,
+            subject: 'Your forgotten password',
+            text: password
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        if (result.length != 0) {
+            res.sendFile(path.join(__dirname + '/view/Log_In.html'));
+            //console.log("test");
+        }
+        else {
+            res.sendFile(path.join(__dirname + '/view/Log_In_Failed.html'));
+        }
+
+    });
 });
 
 /* add new user */
