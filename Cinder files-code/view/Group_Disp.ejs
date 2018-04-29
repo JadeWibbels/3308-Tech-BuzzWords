@@ -15,8 +15,17 @@
 </div>
 <div class="Left_Side_Bar" id="Left_Side_Bar">
 	<a href="/Front_Page.html"><p class="Home_Button" id="Home_Button">Return to Class List</p></a>
-	    <h3><p>Add a new study group</p></h3>
+
+  <h3>
     <a href ="/Add_Group.html">Add Group</a>
+  </h3>
+
+  <h2>Class info:</h2>
+  <% if (data) { %>
+  <% data.forEach(function(item){ %>
+    <p><%= item.info %></p>
+    <% }) %>
+
 
 </div>
 
@@ -46,8 +55,7 @@
             <th>Times</th>
             <th>Location</th>
 		</tr>
-		<% if (data) { %>
-			<% data.forEach(function(item){ console.log(item.days)%>
+			<% data.forEach(function(item){ %>
 				<tr>
 					<td><%= item.number %></td>
 					<td><%= item.days %></td>
