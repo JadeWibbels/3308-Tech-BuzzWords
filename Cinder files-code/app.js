@@ -32,7 +32,7 @@ app.use(express.static(__dirname + '/view/'));
 
 /* Loads main page */
 app.get('/',function(req, res, next){
-  res.sendFile(path.join(__dirname+'/view/Log_In.html'));
+  res.sendFile(path.join(__dirname+'/view/Front_Page2.html'));
   //__dirname : It will resolve to your project folder.
 });
 
