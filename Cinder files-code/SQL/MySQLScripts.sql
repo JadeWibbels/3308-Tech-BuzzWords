@@ -1,9 +1,9 @@
---MySql stuff
---create database
-create database 3308Grp1;
-use 3308Grp1;
+-- MySql stuff
+-- create database
+create database 3308grp1;
+use 3308grp1;
 
---create tables
+-- create tables
 create table if not exists Students(
 userId varchar(40),
 password varchar(10),
@@ -25,7 +25,7 @@ location varchar(200),
 primary key (number)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7;
 
--- insert classes into classes table
+-- insert classes into Classes table
 insert into Classes(classID, info) values
 (1200, 'Art of Computational Thinking LEC Muzny Grace Ellen'),
 (1300, 'Starting Computing LEC Fleming Ioana Nicolaes'),
@@ -58,19 +58,19 @@ insert into Classes(classID, info) values
 (4809, 'Computer Animation 3 King Roger'),
 (4830, 'Spec Tpcs in Computer Science LEC Kane Shaun Kevin');
 
---Inserts
+-- Inserts
 insert into Students(userId, password) values
 ('erin.wibbels@colorado.edu', '3308Rocks');
 
 insert into Groups(classId, days, time, location) values
 (3308, 'MWF', '10;00 am', 'CCES');
 
---look for existing:
+-- look for existing:
 select * from Students
 	where userId ="erin.wibbels@colorado.edu" and
-	password = 3308rocks;
+	password = "3308rocks";
 	
-select number, days, time, location from groups
+select number, days, time, location from Groups
 	where classId = 3308;
 
 	
