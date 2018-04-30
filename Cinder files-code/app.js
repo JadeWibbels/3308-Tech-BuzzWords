@@ -57,8 +57,8 @@ app.post('/viewClass/(:id)', urlencodedParser, function (req, res) {
 /* load calendar page*/
 
 app.post('/viewCalendar', urlencodedParser, function (req, res) {
-    console.log("loading Calendar")
-    query = con.query("SELECT number, Groups.classId, days, time, location, info FROM Groups INNER JOIN classes ON Groups.classId = classes.classId;", function (err, rows) {
+    console.log("loading Calendar");
+    query = con.query("SELECT number, Groups.classId, days, time, location, info FROM Groups INNER JOIN Classes ON Groups.classId = Classes.classId;", function (err, rows) {
         if (err) throw err;
         console.log(rows);
         //if (rows <= 0) res.render(path.join(__dirname + '/view/Group_Disp.html'), { data: all });
